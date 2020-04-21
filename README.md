@@ -21,7 +21,7 @@ cd `client` and run yarn install dependencies related to React.
 
 #### Product Userflows
 
-![Userflow mapping]( "userflow design")
+![Userflow mapping](/design/user-flow.png)
 &nbsp;
 
 #### URL Mapping
