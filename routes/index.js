@@ -10,7 +10,7 @@ const apiKey = "a7ba4e9467f843629b9992c525a04ba0";
 
 //RECIPE INSTRUCTIONS
 router.get('/recipe/:id', function (req, res) {
-  fetch(`https://api.spoonacular.com/recipes/id=${req.params.id}/information?apiKey=${apiKey}&includeNutrition=<boolean>`)
+  fetch(`https://api.spoonacular.com/recipes/id=${req.params.id}/information?apiKey=${apiKey}`)
     .then(res => res.json())
     .then(data => {
       console.log(data)
@@ -20,7 +20,7 @@ router.get('/recipe/:id', function (req, res) {
 
 //RECIPE GENERATOR
 router.get('/recipe/:ingredients', function (req, res) {
-  fetch(`https://api.spoonacular.com/recipes/infdByIngredients=${req.params.infdByIngredients}ingredients=&apiKey=${apiKey}`)
+  fetch(`https://api.spoonacular.com/recipes/findByIngredients=${req.params.findByIngredients}ingredients=&apiKey=${apiKey}`)
     .then(res => res.json())
     .then(data => {
       console.log(data)
@@ -30,7 +30,7 @@ router.get('/recipe/:ingredients', function (req, res) {
 
 // SHOPPING LIST
 router.get('/recipe/:id/ingredient', function (req, res) {
-  fetch(`https://api.spoonacular.com/recipes/id=${req.params.id}/ingredientWidget?apiKey=${apiKey}&defaultCss=<boolean>`)
+  fetch(`https://api.spoonacular.com/recipes/id=${req.params.id}/ingredientWidget?apiKey=${apiKey}`)
     .then(res => res.json())
     .then(data => {
       console.log(data)
@@ -40,7 +40,7 @@ router.get('/recipe/:id/ingredient', function (req, res) {
 
 //MEAL PLANNER
 router.get('/recipe/mealplanner/:diet/:excludeIngredients/:intolerances/:cuisine', function (req, res) {
-  fetch(`https://api.spoonacular.com/recipes/search?diet=${req.params.diet}&excludeIngredients${req.params.excludeIngredients}=&intolerances=${req.params.intolerances}&cuisine=${req.params.cuisine}&apiKey=${apiKey}`)
+  fetch(`https://api.spoonacular.com/recipes/search?diet=${req.params.diet}&excludeIngredients${req.params.excludeIngredients}=&intolerances=${req.params.intolerances}&cuisine=${req.params.cuisine}&number=21&apiKey=${apiKey}`)
     .then(res => res.json())
     .then(data => {
       console.log(data)
