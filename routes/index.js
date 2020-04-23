@@ -6,7 +6,7 @@ router.get('/', function (req, res, next) {
   res.send('index', { title: 'Express' });
 });
 
-const apiKey = "a7ba4e9467f843629b9992c525a04ba0";
+const apiKey = "d3c9561c9f504450858f14926a0aee9f";
 
 //RECIPE INSTRUCTIONS
 router.get('/recipe/:id', function (req, res) {
@@ -31,7 +31,7 @@ router.get('/recipe/findByIngredients/:ingredients', function (req, res) {
 // SHOPPING LIST
 router.get('/recipe/:id/ingredientWidget', function (req, res) {
   fetch(`https://api.spoonacular.com/recipes/${req.params.id}/ingredientWidget?apiKey=${apiKey}`)
-    .then(res => res.json())
+    .then(res => res.text())
     .then(data => {
       res.send(data);
     })
