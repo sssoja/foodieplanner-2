@@ -31,7 +31,7 @@ router.get('/recipe/:ingredients', function (req, res) {
 // SHOPPING LIST
 router.get('/recipe/:id/ingredient', function (req, res) {
   fetch(`https://api.spoonacular.com/recipes/id=${req.params.id}/ingredientWidget?apiKey=${apiKey}`)
-    .then(res => res.json())
+    .then(res => res.text())
     .then(data => {
       console.log(data)
     })
@@ -39,11 +39,11 @@ router.get('/recipe/:id/ingredient', function (req, res) {
 });
 
 //MEAL PLANNER
-router.get('/recipe/mealplanner/:diet/:excludeIngredients/:intolerances/:cuisine', function (req, res) {
+router.get('/recipe/search/:diet/:excludeIngredients/:intolerances/:cuisine', function (req, res) {
   fetch(`https://api.spoonacular.com/recipes/search?diet=${req.params.diet}&excludeIngredients${req.params.excludeIngredients}=&intolerances=${req.params.intolerances}&cuisine=${req.params.cuisine}&number=21&apiKey=${apiKey}`)
     .then(res => res.json())
     .then(data => {
-      console.log(data)
+      res.send(data);
     })
     .catch(err => res.send(err))
 });
