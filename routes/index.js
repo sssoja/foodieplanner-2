@@ -40,7 +40,7 @@ router.get('/recipe/:id/ingredientWidget', function (req, res) {
 
 //MEAL PLANNER
 router.get('/recipe/search/:diet/:excludeIngredients/:intolerances/:cuisine', function (req, res) {
-  fetch(`https://api.spoonacular.com/recipes/search?diet=${req.params.diet}&excludeIngredients${req.params.excludeIngredients}=&intolerances=${req.params.intolerances}&cuisine=${req.params.cuisine}&number=21&apiKey=${apiKey}`)
+  fetch(`https://api.spoonacular.com/recipes/search?diet=${req.params.diet}&excludeIngredients=${req.params.excludeIngredients}&intolerances=${req.params.intolerances}&cuisine=${req.params.cuisine}&number=21&apiKey=${apiKey}`)
     .then(res => res.json())
     .then(data => {
       res.send(data);
