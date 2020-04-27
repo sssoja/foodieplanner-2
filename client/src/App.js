@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import 'typeface-roboto';
 import LandingPage from './components/LandingPage';
-import MealPlanner from './components/MealPlanner';
+//import MealPlanner from './components/MealPlanner';
 /*import ShoppingList from './components/ShoppingList';
 import RecipePage from './components/RecipePage';
 import BrowseRecipes from './components/BrowseRecipes'; */
@@ -34,8 +34,8 @@ export default function App() {
       </AppBar>
         <Switch>
           <Route path="/" exact component={LandingPage} />
-          <Route path="/meal-planner" exact component={MealPlanner} />
-          {/*<Route path="/shopping-list" exact component={ShoppingList} />
+          {/*<Route path="/meal-planner" exact component={MealPlanner} />
+          <Route path="/shopping-list" exact component={ShoppingList} />
           <Route path="/recipe/:id" component={RecipePage} />
           <Route path="/recipes-by-ingredients" component={BrowseRecipes} /> */}
         </Switch>
