@@ -21,17 +21,17 @@ export default function App() {
   return (
     <Router>
       <div>
-      <AppBar>
-        <Toolbar style={{ backgroundColor: 'rgb(43, 137, 139)' }} variant="dense">
-        <Link 
-          to="/"
-          style={{ textDecoration: 'none' }}>
-          <Typography style={{ color: 'white' }} variant="h2">
-          <Box letterSpacing={4} m={2}>Foodie Planner</Box>
-          </Typography>
-        </Link>
-        </Toolbar>
-      </AppBar>
+        <AppBar>
+          <Toolbar style={{ backgroundColor: 'rgb(43, 137, 139)' }} variant="dense">
+            <Link
+              to="/"
+              style={{ textDecoration: 'none' }}>
+              <Typography style={{ color: 'white' }} variant="h2">
+                <Box letterSpacing={4} m={2}>Foodie Planner</Box>
+              </Typography>
+            </Link>
+          </Toolbar>
+        </AppBar>
         <Switch>
           <Route path="/" exact component={LandingPage} />
           {/*<Route path="/meal-planner" exact component={MealPlanner} />

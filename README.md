@@ -19,18 +19,28 @@ cd `client` and run yarn install dependencies related to React.
 - You can test your API in `http://localhost:5000`
   &nbsp;
 
+  #### Mock-up
+![Mock up](/design/landingpage.png)
+  &nbsp;
+![Mock up](design/mealplanner.png)
+&nbsp;
+![Mock up](/design/shoppingList.png)
+  &nbsp;
+
+![Mock up](/design/recipePage.png)
+  &nbsp;
+
+![Mock up](/design/ingredients.png)
+  &nbsp;
+
 #### Product Userflows
 
 ![Userflow mapping](/design/user-flow.png)
 &nbsp;
 
-#### URL Mapping
-
-&nbsp;
-
 #### Route File Structuring
 
-![API route files structure]( "API routes file structure")
+![API route files structure](/design/url-routing.png)
 &nbsp;
 
 #### Full Stack Framework
