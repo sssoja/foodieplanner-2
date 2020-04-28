@@ -6,7 +6,7 @@ router.get('/', function (req, res, next) {
   res.send('index', { title: 'Express' });
 });
 
-const apiKey = process.env.apiKey;
+const apiKey = "d3c9561c9f504450858f14926a0aee9f";
 
 //RECIPE INSTRUCTIONS
 router.get('/recipe/:id', function (req, res) {
