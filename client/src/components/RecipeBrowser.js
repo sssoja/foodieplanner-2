@@ -25,7 +25,7 @@ class RecipeBrowser extends React.Component {
     fetch(`/recipe/findByIngredients/${this.state.ingredients}`)
       .then((response) => response.json())
       .then((response) => {
-        this.setState({ recipes: response });
+        this.setState({ ingredients: response });
       });
   }
 
