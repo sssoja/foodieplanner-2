@@ -3,6 +3,9 @@ import Paper from "@material-ui/core/Paper";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import { BrowserRouter as Router, Link } from "react-router-dom";
+// import CardHeader from '@material-ui/core/CardHeader';
+// import CardMedia from '@material-ui/core/CardMedia';
+// import CardContent from '@material-ui/core/CardContent';
 
 class RecipeInstructions extends React.Component {
   constructor(props) {
