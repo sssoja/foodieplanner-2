@@ -37,6 +37,7 @@ export default function App() {
             exact
             component={RecipeBrowser}
           />
+          <Route path="/recipe" exact component={RecipeBrowser} />
           {/* {<Route path="/meal-planner" exact component={MealPlanner} />
           <Route path="/shopping-list" exact component={ShoppingList} />
           <Route path="/recipe/:id" component={RecipePage} /> */}
