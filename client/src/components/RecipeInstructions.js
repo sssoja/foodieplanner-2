@@ -1,20 +1,17 @@
 import React from "react";
 import Paper from "@material-ui/core/Paper";
-import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
-import Card from "@material-ui/core/Card";
+import Typography from "@material-ui/core/Typography";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 // import CardHeader from '@material-ui/core/CardHeader';
 // import CardMedia from '@material-ui/core/CardMedia';
 // import CardContent from '@material-ui/core/CardContent';
-import Typography from "@material-ui/core/Typography";
-import { BrowserRouter as Router, Link } from "react-router-dom";
-// import { makeStyles } from "@material-ui/core/styles";
 
-class RecipeBrowser extends React.Component {
+class RecipeInstructions extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      ingredients: this.props.location.state,
+      instructions: this.props.location.state,
     };
   }
 
@@ -22,10 +19,10 @@ class RecipeBrowser extends React.Component {
     //   const { handle } = this.props.match.params
     //   const { fromGetRecipes } = this.props.location.state
 
-    fetch(`/recipe/findByIngredients/${this.state.ingredients}`)
+    fetch(`/recipe/:id/${this.state.instructions}`)
       .then((response) => response.json())
       .then((response) => {
-        this.setState({ recipes: response });
+        this.setState({ instructions: response });
       });
   }
 
@@ -34,7 +31,7 @@ class RecipeBrowser extends React.Component {
       <div>
         <Container>
           <Paper>
-            <Typography variant="h4">Recipe Browser</Typography>
+            <Typography variant="h4">Recipe</Typography>
             <Grid>
               <Card>
                 <Link></Link>
@@ -47,4 +44,4 @@ class RecipeBrowser extends React.Component {
   }
 }
 
-export default RecipeBrowser;
+export default RecipeInstructions;
