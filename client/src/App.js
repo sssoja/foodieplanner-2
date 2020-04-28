@@ -5,7 +5,7 @@ import LandingPage from "./components/LandingPage";
 //import MealPlanner from './components/MealPlanner';
 /*import ShoppingList from './components/ShoppingList';
 import BrowseRecipes from './components/BrowseRecipes'; */
-import RecipeBrowser from "./recipe-components/RecipeBrowser";
+import RecipeBrowser from "./components/RecipeBrowser";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
