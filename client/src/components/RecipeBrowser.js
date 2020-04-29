@@ -22,7 +22,7 @@ class RecipeBrowser extends React.Component {
 
   componentDidMount() {
     let ingredients = this.state.ingredients.ingredientsForRecipes.toString();
-    console.log(ingredients)
+    console.log(ingredients);
 
     fetch(`/recipe/findByIngredients/${ingredients}`)
       .then((response) => response.json())
@@ -34,6 +34,7 @@ class RecipeBrowser extends React.Component {
   useStyles = makeStyles({
     root: {
       minWidth: 275,
+      maxWidth: 345,
     },
     title: {
       fontSize: 14,
@@ -54,9 +55,9 @@ class RecipeBrowser extends React.Component {
         <Container>
           <Paper>
             <Box p={3}>
-              <Typography variant="h4">Recipe Browser</Typography>
+              <Typography variant="h4">Choose your recipe</Typography>
             </Box>
-            <hr />
+
             <Grid
               container
               spacing={3}
@@ -73,29 +74,33 @@ class RecipeBrowser extends React.Component {
                           className={classes.title}
                           color="textSecondary"
                           gutterBottom
-                        >
-                          Ready in: {recipe.readyInMinutes}
-                        </Typography>
+                        ></Typography>
                         <Typography variant="h5" component="h2">
                           {recipe.title}
                         </Typography>
                         <Typography
                           className={classes.pos}
                           color="textSecondary"
-                        >
-                          Serves: {recipe.servings}
-                        </Typography>
+                        ></Typography>
+                        <br></br>
                         <Link
                           to={`/recipe/${recipe.id}`}
                           style={{ textDecoration: "none" }}
                         >
-                        <CardMedia
-                          className={classes.media}
-                         
-                        /> <img src={"https://spoonacular.com/recipeImages/" + recipe.id + "-480x360.jpg"}/>
-                        Link</Link>
+                          <CardMedia className={classes.media} />{" "}
+                          <img
+                            src={
+                              "https://spoonacular.com/recipeImages/" +
+                              recipe.id +
+                              "-480x360.jpg"
+                            }
+                          />
+                        </Link>
                       </CardContent>
                     </Card>
+                    <div>
+                      <Box p={2}></Box>
+                    </div>
                   </div>
                 );
               })}

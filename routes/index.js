@@ -6,9 +6,7 @@ router.get("/", function (req, res, next) {
   res.send("index", { title: "Express" });
 });
 
-//const OCD_API_KEY = process.env.REACT_APP_OCD_API_KEY;
-
-const OCD_API_KEY = "d3c9561c9f504450858f14926a0aee9f"
+const OCD_API_KEY = "d3c9561c9f504450858f14926a0aee9f";
 
 //RECIPE INSTRUCTIONS
 router.get("/recipe/:id", function (req, res) {
@@ -25,7 +23,7 @@ router.get("/recipe/:id", function (req, res) {
 //RECIPE GENERATOR
 router.get("/recipe/findByIngredients/:ingredients", function (req, res) {
   fetch(
-    `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${req.params.ingredients}&number=10&apiKey=${OCD_API_KEY}`
+    `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${req.params.ingredients}&number=12&apiKey=${OCD_API_KEY}`
   )
     .then((res) => res.json())
     .then((data) => {
