@@ -2,10 +2,10 @@ import React from "react";
 import "./App.css";
 import "typeface-roboto";
 import LandingPage from "./components/LandingPage";
-//import MealPlanner from './components/MealPlanner';
-/*import ShoppingList from './components/ShoppingList';
-import BrowseRecipes from './components/BrowseRecipes'; */
-import RecipeBrowser from "./recipe-components/RecipeBrowser";
+import MealPlanner from './components/MealPlanner';
+import ShoppingList from './components/ShoppingList';
+import RecipeInstructions from "./components/RecipeInstructions";
+import RecipeBrowser from "./components/RecipeBrowser";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
@@ -37,9 +37,9 @@ export default function App() {
             exact
             component={RecipeBrowser}
           />
-          {/* {<Route path="/meal-planner" exact component={MealPlanner} />
+          <Route path="/recipe/:id" exact component={RecipeInstructions} />
+          <Route path="/meal-planner" exact component={MealPlanner} />
           <Route path="/shopping-list" exact component={ShoppingList} />
-          <Route path="/recipe/:id" component={RecipePage} /> */}
         </Switch>
       </div>
     </Router>
