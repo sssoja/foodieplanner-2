@@ -83,13 +83,33 @@ class RecipeInstructions extends React.Component {
                               "-480x360.jpg"
                             }
                           />
-                          <br></br>
-                          <br></br>
-                          <Typography>{this.state.recipe.summary}</Typography>
-                          <br></br>
+                          <div>
+                            <br></br>
+                            <Typography>{this.state.recipe.summary}</Typography>
+                          </div>
                         </CardContent>
                       </Card>
                     </Box>
+                  </div>
+                </Box>
+              </Paper>
+            </Grid>
+            <Grid item xs={6}>
+              <br />
+              <Paper>
+                <Box p={3}>
+                  <Typography variant="h4">Ingredients</Typography>
+                  <hr />
+                  <div>
+                    <div>
+                      <Box p={2}>
+                        <div>
+                          <ul>--></ul>
+                          <ul>--></ul>
+                          <ul>--></ul>
+                        </div>
+                      </Box>
+                    </div>
                   </div>
                 </Box>
               </Paper>
