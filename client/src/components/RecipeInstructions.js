@@ -61,17 +61,10 @@ class RecipeInstructions extends React.Component {
                     <Box p={2}>
                       <Card>
                         <CardContent>
-                          <Typography
-                            variant="h6"
-                            style={{ color: "rgb(33, 48, 55)" }}
-                            gutterBottom
-                          >
+                          <Typography variant="h6">
                             Ready in minutes: {this.state.recipe.readyInMinutes}
                           </Typography>
-                          <Typography
-                            variant="h6"
-                            style={{ color: "rgb(33, 48, 55)" }}
-                          >
+                          <Typography variant="h6">
                             Serves: {this.state.recipe.servings}
                           </Typography>
                           <br></br>

@@ -70,18 +70,7 @@ class RecipeBrowser extends React.Component {
                   <div>
                     <Card className={classes.root} variant="outlined">
                       <CardContent>
-                        <Typography
-                          className={classes.title}
-                          color="textSecondary"
-                          gutterBottom
-                        ></Typography>
-                        <Typography variant="h5" component="h2">
-                          {recipe.title}
-                        </Typography>
-                        <Typography
-                          className={classes.pos}
-                          color="textSecondary"
-                        ></Typography>
+                        <Typography variant="h6">{recipe.title}</Typography>
                         <br></br>
                         <Link
                           to={`/recipe/${recipe.id}`}
