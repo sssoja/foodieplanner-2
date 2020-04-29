@@ -2,8 +2,8 @@ import React from "react";
 import "./App.css";
 import "typeface-roboto";
 import LandingPage from "./components/LandingPage";
-//import MealPlanner from './components/MealPlanner';
-// import ShoppingList from './components/ShoppingList';
+import MealPlanner from './components/MealPlanner';
+import ShoppingList from './components/ShoppingList';
 import RecipeInstructions from "./components/RecipeInstructions";
 import RecipeBrowser from "./components/RecipeBrowser";
 import AppBar from "@material-ui/core/AppBar";
@@ -38,9 +38,8 @@ export default function App() {
             component={RecipeBrowser}
           />
           <Route path="/recipe/:id" exact component={RecipeInstructions} />
-          {/* {<Route path="/meal-planner" exact component={MealPlanner} />
+          <Route path="/meal-planner" exact component={MealPlanner} />
           <Route path="/shopping-list" exact component={ShoppingList} />
-           */}
         </Switch>
       </div>
     </Router>

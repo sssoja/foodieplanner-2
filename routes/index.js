@@ -6,7 +6,9 @@ router.get("/", function (req, res, next) {
   res.send("index", { title: "Express" });
 });
 
-const OCD_API_KEY = process.env.REACT_APP_OCD_API_KEY;
+//const OCD_API_KEY = process.env.REACT_APP_OCD_API_KEY;
+
+const OCD_API_KEY = "d3c9561c9f504450858f14926a0aee9f"
 
 //RECIPE INSTRUCTIONS
 router.get("/recipe/:id", function (req, res) {

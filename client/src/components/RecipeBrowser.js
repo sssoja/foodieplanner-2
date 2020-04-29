@@ -22,8 +22,9 @@ class RecipeBrowser extends React.Component {
 
   componentDidMount() {
     let ingredients = this.state.ingredients.ingredientsForRecipes.toString();
+    console.log(ingredients)
 
-    fetch(`/recipes/findByIngredients/${ingredients}`)
+    fetch(`/recipe/findByIngredients/${ingredients}`)
       .then((response) => response.json())
       .then((response) => {
         this.setState({ recipes: response });
@@ -85,18 +86,14 @@ class RecipeBrowser extends React.Component {
                           Serves: {recipe.servings}
                         </Typography>
                         <Link
-                          to={{
-                            pathname: "/recipe/:id",
-                            state: {
-                              instructionsForRecipe: this.state.instructions,
-                            },
-                          }}
+                          to={`/recipe/${recipe.id}`}
                           style={{ textDecoration: "none" }}
-                        ></Link>
+                        >
                         <CardMedia
                           className={classes.media}
-                          image={recipe.image}
-                        />
+                         
+                        /> <img src={"https://spoonacular.com/recipeImages/" + recipe.id + "-480x360.jpg"}/>
+                        Link</Link>
                       </CardContent>
                     </Card>
                   </div>

@@ -13,15 +13,15 @@ class RecipeInstructions extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      instructions: this.props.location.state,
+     recipe: []
     };
   }
 
   componentDidMount() {
-    fetch(`/recipe/:id/${this.state.instructions}`)
+    fetch(`/recipe/${this.props.match.params.id}`)
       .then((response) => response.json())
       .then((response) => {
-        this.setState({ instructions: response });
+        this.setState({ recipe: response });
       });
   }
 
