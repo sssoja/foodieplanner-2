@@ -15,7 +15,10 @@ class RecipeInstructions extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      recipe: [],
+      recipe: {},
+      instructionSteps: [],
+      stepNum: 1,
+      ingredients: [],
     };
   }
 
@@ -24,6 +27,22 @@ class RecipeInstructions extends React.Component {
       .then((response) => response.json())
       .then((response) => {
         this.setState({ recipe: response });
+
+        let steps = [];
+        let ingredients = [];
+        let arrayOfSteps = this.state.recipe.analyzedInstructions[0].steps;
+        let arrayOfIngredients = this.state.recipe.analyzedInstructions[0]
+          .steps[0].ingredients;
+
+        for (let i = 0; i < arrayOfSteps.length; i++) {
+          steps.push(arrayOfSteps[i].step);
+
+          for (let j = 0; j < arrayOfIngredients.length; j++) {
+            ingredients.push(arrayOfIngredients[j].name);
+          }
+        }
+        this.setState({ instructionSteps: steps });
+        this.setState({ ingredients: ingredients });
       });
   }
 
@@ -78,7 +97,19 @@ class RecipeInstructions extends React.Component {
                           />
                           <div>
                             <br></br>
-                            <Typography>{this.state.recipe.summary}</Typography>
+                            <Typography>
+                              <div>
+                                {this.state.instructionSteps.map(
+                                  (step, index) => (
+                                    <div key={index}>
+                                      <ul>
+                                        {this.state.stepNum}. {step}
+                                      </ul>
+                                    </div>
+                                  )
+                                )}
+                              </div>
+                            </Typography>
                           </div>
                         </CardContent>
                       </Card>
@@ -97,9 +128,13 @@ class RecipeInstructions extends React.Component {
                     <div>
                       <Box p={2}>
                         <div>
-                          <ul>--></ul>
-                          <ul>--></ul>
-                          <ul>--></ul>
+                          <Typography variant="h6">
+                            {this.state.ingredients.map((ingredient, index) => (
+                              <div key={index}>
+                                <ul>{this.state.ingredients}</ul>
+                              </div>
+                            ))}
+                          </Typography>
                         </div>
                       </Box>
                     </div>
