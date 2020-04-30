@@ -15,7 +15,8 @@ class RecipeInstructions extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      recipe: [],
+      recipe: {},
+      instructionSteps: []
     };
   }
 
@@ -24,7 +25,20 @@ class RecipeInstructions extends React.Component {
       .then((response) => response.json())
       .then((response) => {
         this.setState({ recipe: response });
+        console.log(this.state.recipe)
+        let steps = [];
+        let arrayOfSteps = this.state.recipe.analyzedInstructions[0].steps;
+        console.log(this.state.recipe);
+        for (let i = 0; i < arrayOfSteps.length; i++) {
+         steps.push(arrayOfSteps[i].step);
+         console.log(arrayOfSteps[i].step);
+        }
+       this.setState({ instructionSteps: steps });
       });
+
+ 
+    // let instructions = this.state.recipe.ingredientsForRecipes.toString();
+    // console.log(ingredients);
   }
 
   useStyles = makeStyles({
