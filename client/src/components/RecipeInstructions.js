@@ -131,7 +131,7 @@ class RecipeInstructions extends React.Component {
                           <Typography variant="h6">
                             {this.state.ingredients.map((ingredient, index) => (
                               <div key={index}>
-                                <ul>{this.state.ingredients}</ul>
+                                <ul>&#10004;&nbsp;&nbsp;{ingredient}</ul>
                               </div>
                             ))}
                           </Typography>
