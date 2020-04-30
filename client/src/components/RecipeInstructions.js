@@ -102,9 +102,9 @@ class RecipeInstructions extends React.Component {
                                 {this.state.instructionSteps.map(
                                   (step, index) => (
                                     <div key={index}>
-                                      <ul>
-                                        {this.state.stepNum}. {step}
-                                      </ul>
+                                      <ol>
+                                        {this.state.stepNum++}. {step}
+                                      </ol>
                                     </div>
                                   )
                                 )}
