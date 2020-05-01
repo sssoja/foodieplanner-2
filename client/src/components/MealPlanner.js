@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import Button from "@material-ui/core/Button";
 
 
 class mealPlanner extends React.Component {
@@ -22,6 +24,27 @@ class mealPlanner extends React.Component {
                       </div>
                       );
                       })}
+                </div>
+                <div>
+                    <Link
+                    to={{
+                    pathname: "/shopping-list",
+                    state: {
+                        recipesPlanner: this.state.recipes,
+                    },
+                    }}
+                    style={{ textDecoration: "none" }}
+                    >
+                        <Button
+                        variant="contained"
+                        style={{
+                            backgroundColor: "rgb(43, 137, 139)",
+                            color: "white",
+                        }}
+                        >
+                        Get Shopping List
+                        </Button>
+                    </Link>
                 </div>
             </div>
         );

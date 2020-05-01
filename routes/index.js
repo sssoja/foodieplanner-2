@@ -35,6 +35,17 @@ router.get("/recipe/findByIngredients/:ingredients", function (req, res) {
 // SHOPPING LIST
 router.get("/recipe/:id/ingredientWidget", function (req, res) {
   fetch(
+    `https://api.spoonacular.com/recipes/${req.params.id}/ingredientWidget.json?apiKey=${OCD_API_KEY}`
+  )
+    .then((res) => res.json())
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => res.send(err));
+});
+
+router.get("/recipe/:id/ingredientWidgetHTML", function (req, res) {
+  fetch(
     `https://api.spoonacular.com/recipes/${req.params.id}/ingredientWidget?apiKey=${OCD_API_KEY}`
   )
     .then((res) => res.text())

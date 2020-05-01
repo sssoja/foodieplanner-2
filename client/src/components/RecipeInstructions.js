@@ -44,6 +44,10 @@ class RecipeInstructions extends React.Component {
         this.setState({ instructionSteps: steps });
         this.setState({ ingredients: ingredients });
       });
+
+ 
+    // let instructions = this.state.recipe.ingredientsForRecipes.toString();
+    // console.log(ingredients);
   }
 
   useStyles = makeStyles({
