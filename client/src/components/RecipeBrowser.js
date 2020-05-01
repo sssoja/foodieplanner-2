@@ -60,7 +60,7 @@ class RecipeBrowser extends React.Component {
           {this.state.recipes.map((recipe) => {
             return (
               <div>
-                <Grid container spacing={3}>
+                <Grid>
                   <Grid item xs>
                     <Card className={classes.root} variant="outlined">
                       <CardContent>
