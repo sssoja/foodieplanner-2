@@ -3,6 +3,8 @@ import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
+// import html2canvas from "html2canvas";
+// import jsPDF from "jspdf";
 
 export default class ShoppingList extends Component {
   constructor(props) {
@@ -53,6 +55,17 @@ export default class ShoppingList extends Component {
     }
   }
 
+  // printDocument() {
+  //   const input = document.getElementById("divToPrint");
+  //   html2canvas(input).then((canvas) => {
+  //     const imgData = canvas.toDataURL("image/png");
+  //     const pdf = new jsPDF();
+  //     pdf.addImage(imgData, "JPEG", 0, 0);
+  //     // pdf.output('dataurlnewwindow');
+  //     pdf.save("download.pdf");
+  //   });
+  // }
+
   render() {
     return (
       <div>
@@ -74,7 +87,11 @@ export default class ShoppingList extends Component {
             );
           })}
           {/* <Link to={ingredients.file} target="_blank" download> */}
-          <Button variant="contained" color="primary">
+          <Button
+            // onClick={this.printDocument}
+            variant="contained"
+            color="primary"
+          >
             Save to PDF
           </Button>
           {/* </Link> */}

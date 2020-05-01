@@ -53,21 +53,15 @@ class RecipeBrowser extends React.Component {
     return (
       <div className={classes.root}>
         <Container>
-          <Paper>
-            <Box p={3}>
-              <Typography variant="h4">Choose your recipe</Typography>
-            </Box>
+          <Box p={3}>
+            <Typography variant="h4">Choose your recipe</Typography>
+          </Box>
 
-            <Grid
-              container
-              spacing={3}
-              direction="row"
-              justify="flex-start"
-              alignItems="flex-start"
-            >
-              {this.state.recipes.map((recipe) => {
-                return (
-                  <div>
+          {this.state.recipes.map((recipe) => {
+            return (
+              <div>
+                <Grid container spacing={3}>
+                  <Grid item xs>
                     <Card className={classes.root} variant="outlined">
                       <CardContent>
                         <Typography variant="h6">{recipe.title}</Typography>
@@ -87,14 +81,14 @@ class RecipeBrowser extends React.Component {
                         </Link>
                       </CardContent>
                     </Card>
-                    <div>
-                      <Box p={2}></Box>
-                    </div>
-                  </div>
-                );
-              })}
-            </Grid>
-          </Paper>
+                  </Grid>
+                </Grid>
+                <div>
+                  <Box p={2}></Box>
+                </div>
+              </div>
+            );
+          })}
         </Container>
       </div>
     );
