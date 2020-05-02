@@ -16,8 +16,8 @@ class RecipeInstructions extends React.Component {
     super(props);
     this.state = {
       recipe: {},
-      instructionSteps: [],
-      stepNum: 1,
+      analyzedInstructions: [],
+      stepNum: 0,
       ingredients: [],
     };
   }
@@ -29,8 +29,10 @@ class RecipeInstructions extends React.Component {
         this.setState({ recipe: response });
 
         let steps = [];
-        let ingredients = [];
         let arrayOfSteps = this.state.recipe.analyzedInstructions[0].steps;
+        let stepNum = this.state.recipe.analyzedInstructions[0].steps[0].number;
+
+        let ingredients = [];
         let arrayOfIngredients = this.state.recipe.analyzedInstructions[0]
           .steps[0].ingredients;
 
@@ -41,8 +43,9 @@ class RecipeInstructions extends React.Component {
             ingredients.push(arrayOfIngredients[j].name);
           }
         }
-        this.setState({ instructionSteps: steps });
+        this.setState({ analyzedInstructions: steps });
         this.setState({ ingredients: ingredients });
+        this.setState({ stepNum: stepNum });
       });
   }
 
@@ -64,6 +67,7 @@ class RecipeInstructions extends React.Component {
 
   render() {
     const classes = makeStyles();
+
     return (
       <div className={classes.root}>
         <Container>
@@ -99,7 +103,7 @@ class RecipeInstructions extends React.Component {
                             <br></br>
                             <Typography>
                               <div>
-                                {this.state.instructionSteps.map(
+                                {this.state.analyzedInstructions.map(
                                   (step, index) => (
                                     <div key={index}>
                                       <ol>
