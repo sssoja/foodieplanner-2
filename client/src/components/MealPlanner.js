@@ -49,37 +49,52 @@ class mealPlanner extends React.Component {
                                 <Grid item xs={1}>
                                     <Paper>
                                         {this.state.recipes[0].title}
-                                        <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[0].id + "-480x360.jpg"} />
+                                        <Link to={`/recipe/${this.state.recipes[0].id}`}>
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[0].id + "-90x90.jpg"} />
+                                        </Link>
                                     </Paper>
+
                                 </Grid>
                                 <Grid item xs={1}>
                                     <Paper>{this.state.recipes[1].title}
-                                        <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[1].id + "-480x360.jpg"} />
+                                        <Link to={`/recipe/${this.state.recipes[1].id}`}>
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[1].id + "-90x90.jpg"} />
+                                        </Link>
                                     </Paper>
                                 </Grid>
                                 <Grid item xs={1}>
                                     <Paper>{this.state.recipes[2].title}
-                                        <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[2].id + "-480x360.jpg"} />
+                                        <Link to={`/recipe/${this.state.recipes[2].id}`}>
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[2].id + "-90x90.jpg"} />
+                                        </Link>
                                     </Paper>
                                 </Grid>
                                 <Grid item xs={1}>
                                     <Paper>{this.state.recipes[3].title}
-                                        <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[3].id + "-480x360.jpg"} />
+                                        <Link to={`/recipe/${this.state.recipes[3].id}`}>
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[3].id + "-90x90.jpg"} />
+                                        </Link>
                                     </Paper>
                                 </Grid>
                                 <Grid item xs={1}>
                                     <Paper>{this.state.recipes[4].title}
-                                        <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[4].id + "-480x360.jpg"} />
+                                        <Link to={`/recipe/${this.state.recipes[4].id}`}>
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[4].id + "-90x90.jpg"} />
+                                        </Link>
                                     </Paper>
                                 </Grid>
                                 <Grid item xs={1}>
                                     <Paper>{this.state.recipes[5].title}
-                                        <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[5].id + "-480x360.jpg"} />
+                                        <Link to={`/recipe/${this.state.recipes[5].id}`}>
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[5].id + "-90x90.jpg"} />
+                                        </Link>
                                     </Paper>
                                 </Grid>
                                 <Grid item xs={1}>
                                     <Paper>{this.state.recipes[6].title}
-                                        <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[6].id + "-480x360.jpg"} />
+                                        <Link to={`/recipe/${this.state.recipes[6].id}`}>
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[6].id + "-90x90.jpg"} />
+                                        </Link>
                                     </Paper>
                                 </Grid>
                             </React.Fragment>
@@ -92,37 +107,51 @@ class mealPlanner extends React.Component {
                             <React.Fragment>
                                 <Grid item xs={1}>
                                     <Paper>{this.state.recipes[7].title}
-                                        <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[7].id + "-480x360.jpg"} />
+                                        <Link to={`/recipe/${this.state.recipes[7].id}`}>
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[7].id + "-90x90.jpg"} />
+                                        </Link>
                                     </Paper>
                                 </Grid>
                                 <Grid item xs={1}>
                                     <Paper>{this.state.recipes[8].title}
-                                        <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[8].id + "-480x360.jpg"} />
+                                        <Link to={`/recipe/${this.state.recipes[8].id}`}>
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[8].id + "-90x90.jpg"} />
+                                        </Link>
                                     </Paper>
                                 </Grid>
                                 <Grid item xs={1}>
                                     <Paper>{this.state.recipes[9].title}
-                                        <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[9].id + "-480x360.jpg"} />
+                                        <Link to={`/recipe/${this.state.recipes[9].id}`}>
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[9].id + "-90x90.jpg"} />
+                                        </Link>
                                     </Paper>
                                 </Grid>
                                 <Grid item xs={1}>
                                     <Paper>{this.state.recipes[10].title}
-                                        <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[10].id + "-480x360.jpg"} />
+                                        <Link to={`/recipe/${this.state.recipes[10].id}`}>
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[10].id + "-90x90.jpg"} />
+                                        </Link>
                                     </Paper>
                                 </Grid>
                                 <Grid item xs={1}>
                                     <Paper>{this.state.recipes[11].title}
-                                        <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[11].id + "-480x360.jpg"} />
+                                        <Link to={`/recipe/${this.state.recipes[11].id}`}>
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[11].id + "-90x90.jpg"} />
+                                        </Link>
                                     </Paper>
                                 </Grid>
                                 <Grid item xs={1}>
                                     <Paper>{this.state.recipes[12].title}
-                                        <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[12].id + "-480x360.jpg"} />
+                                        <Link to={`/recipe/${this.state.recipes[12].id}`}>
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[12].id + "-90x90.jpg"} />
+                                        </Link>
                                     </Paper>
                                 </Grid>
                                 <Grid item xs={1}>
                                     <Paper>{this.state.recipes[13].title}
-                                        <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[13].id + "-480x360.jpg"} />
+                                        <Link to={`/recipe/${this.state.recipes[13].id}`}>
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[13].id + "-90x90.jpg"} />
+                                        </Link>
                                     </Paper>
                                 </Grid>
                             </React.Fragment>
@@ -135,44 +164,57 @@ class mealPlanner extends React.Component {
                             <React.Fragment>
                                 <Grid item xs={1}>
                                     <Paper>{this.state.recipes[14].title}
-                                        <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[14].id + "-480x360.jpg"} />
+                                        <Link to={`/recipe/${this.state.recipes[14].id}`}>
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[14].id + "-90x90.jpg"} />
+                                        </Link>
                                     </Paper>
                                 </Grid>
                                 <Grid item xs={1}>
                                     <Paper>{this.state.recipes[15].title}
-                                        <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[15].id + "-480x360.jpg"} />
+                                        <Link to={`/recipe/${this.state.recipes[15].id}`}>
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[15].id + "-90x90.jpg"} />
+                                        </Link>
                                     </Paper>
                                 </Grid>
                                 <Grid item xs={1}>
                                     <Paper>{this.state.recipes[16].title}
-                                        <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[16].id + "-480x360.jpg"} />
+                                        <Link to={`/recipe/${this.state.recipes[16].id}`}>
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[16].id + "-90x90.jpg"} />
+                                        </Link>
                                     </Paper>
                                 </Grid>
                                 <Grid item xs={1}>
                                     <Paper>{this.state.recipes[17].title}
-                                        <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[17].id + "-480x360.jpg"} />
+                                        <Link to={`/recipe/${this.state.recipes[17].id}`}>
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[17].id + "-90x90.jpg"} />
+                                        </Link>
                                     </Paper>
                                 </Grid>
                                 <Grid item xs={1}>
                                     <Paper>{this.state.recipes[18].title}
-                                        <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[18].id + "-480x360.jpg"} />
+                                        <Link to={`/recipe/${this.state.recipes[18].id}`}>
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[18].id + "-90x90.jpg"} />
+                                        </Link>
                                     </Paper>
                                 </Grid>
                                 <Grid item xs={1}>
                                     <Paper>{this.state.recipes[19].title}
-                                        <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[19].id + "-480x360.jpg"} />
+                                        <Link to={`/recipe/${this.state.recipes[19].id}`}>
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[19].id + "-90x90.jpg"} />
+                                        </Link>
                                     </Paper>
                                 </Grid>
                                 <Grid item xs={1}>
                                     <Paper>{this.state.recipes[20].title}
-                                        <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[20].id + "-480x360.jpg"} />
+                                        <Link to={`/recipe/${this.state.recipes[20].id}`}>
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[20].id + "-90x90.jpg"} />
+                                        </Link>
                                     </Paper>
                                 </Grid>
                             </React.Fragment>
                         </Grid>
                     </Grid >
-                </div>
-                <div>
+
                     <Link
                         to={{
                             pathname: "/shopping-list",
