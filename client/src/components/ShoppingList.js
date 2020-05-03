@@ -3,6 +3,16 @@ import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import CircularProgress from '@material-ui/core/CircularProgress';
 
+// import React, { Component } from 'react';
+// import Typography from "@material-ui/core/Typography";
+// //import Box from "@material-ui/core/Box";
+// import { makeStyles } from '@material-ui/core/styles';
+// import List from '@material-ui/core/List';
+// import ListItem from '@material-ui/core/ListItem';
+// import Divider from '@material-ui/core/Divider';
+// import ListItemText from '@material-ui/core/ListItemText';
+// import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+// import Avatar from '@material-ui/core/Avatar';
 
 export default class ShoppingList extends Component {
     constructor(props) {
@@ -125,3 +135,61 @@ export default class ShoppingList extends Component {
         )
     }
 }
+
+
+//     render() {
+//         const classes = useStyles();
+//         return (
+//             //         <div>
+//             //             <Box p={3}>
+//             //                 <Typography variant="h4">Shopping List</Typography>
+//             //             </Box>
+//             //             <Box p={3}>
+//             //                 {this.state.ingredientsImage.map((ingredient, index) => {
+//             //                   return (
+//             //                   <div key={index}>
+//             //                         <img src={"https://spoonacular.com/cdn/ingredients_100x100/" + ingredient} />
+//             //                   </div>
+//             //                   );
+//             //                 })}
+//             //             </Box>
+//             //         </div>
+
+//             <List className={classes.root}>
+//                 <Divider variant="inset" component="li" />
+//                 <ListItem alignItems="flex-start">
+//                     {this.state.ingredientsImage.map((ingredient, index) => {
+//                         return (
+//                             <ListItemAvatar key={index}>
+//                                 <Avatar src={"https://spoonacular.com/cdn/ingredients_100x100/" + ingredient} />
+//                             </ListItemAvatar>
+//                         );
+//                     })}
+//                     {/* <Avatar alt="Remy Sharp" src={"https://spoonacular.com/cdn/ingredients_100x100/" + ingredient} /> */}
+//                     <ListItemText
+//                         primary="TEST TEXT"
+//                         secondary={
+//                             <React.Fragment>
+//                                 <Typography
+//                                     component="span"
+//                                     variant="body2"
+//                                     className={classes.inline}
+//                                     color="textPrimary"
+//                                 >
+//                                     Shopping List
+//                                 </Typography>
+
+//                                 {/* {this.state.ingredientsImage.map((ingredient, index) => {
+//                                     return (
+//                                         <div key={index}>
+//                                         </div>
+//                                     );
+//                                 })} */}
+//                             </React.Fragment>
+//                         }
+//                     />
+//                 </ListItem>
+//             </List>
+//         );
+//     }
+// }
