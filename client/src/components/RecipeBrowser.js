@@ -28,14 +28,25 @@ class RecipeBrowser extends React.Component {
   }
 
   componentDidMount() {
-    let ingredients = this.state.ingredients.ingredientsForRecipes.toString();
-
-    fetch(`/recipe/findByIngredients/${ingredients}`)
-      .then((response) => response.json())
-      .then((response) => {
-        this.setState({ recipes: response });
-      });
+    this.fetchRecipes();
   }
+
+  fetchRecipes() {
+    let ingredients = this.state.ingredients.ingredientsForRecipes.toString();
+    fetch(`/recipe/findByIngredients/${ingredients}`)
+    .then((response) => response.json())
+    .then((response) => {
+      this.setState({ recipes: response });
+    });
+  }
+/* 
+  async fetchRecipes() {
+    let ingredients = await this.state.ingredients.ingredientsForRecipes.toString();
+    let response = await fetch(`/recipe/findByIngredients/${ingredients}`);
+        let json = await response.json();
+        this.setState({ recipes: json}); 
+  } */
+
 
   useStyles = makeStyles({
     media: {
@@ -43,7 +54,7 @@ class RecipeBrowser extends React.Component {
       paddingTop: "56.25%", // 16:9
     },
     root: {
-      flexGrow: 1,
+      flexGrow: 1
     },
   });
 
@@ -62,7 +73,7 @@ class RecipeBrowser extends React.Component {
                 <Grid xs={12} sm={6} md={3}>
                   <br></br>
                   <Card>
-                    <CardHeader title={recipe.title}></CardHeader>
+                  <CardHeader title={recipe.title} />
                     <Link
                       to={`/recipe/${recipe.id}`}
                       style={{ textDecoration: "none" }}
@@ -72,7 +83,7 @@ class RecipeBrowser extends React.Component {
                         src={
                           "https://spoonacular.com/recipeImages/" +
                           recipe.id +
-                          "-480x360.jpg"
+                          "-480x360." + recipe.imageType
                         }
                       />
                     </Link>
