@@ -13,6 +13,7 @@ import { BrowserRouter as Router, Link } from "react-router-dom";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import IconButton from "@material-ui/core/IconButton";
 import ShareIcon from "@material-ui/icons/Share";
+import Button from "@material-ui/core/Button";
 
 class RecipeBrowser extends React.Component {
   constructor(props) {
@@ -20,7 +21,6 @@ class RecipeBrowser extends React.Component {
     this.state = {
       ingredients: this.props.location.state,
       recipes: [],
-      snippet: "",
     };
   }
 
@@ -34,18 +34,7 @@ class RecipeBrowser extends React.Component {
       });
   }
 
-  useStyles = makeStyles({
-    media: {
-      height: 0,
-      paddingTop: "56.25%", // 16:9
-    },
-    root: {
-      flexGrow: 1,
-    },
-  });
-
   render() {
-    const classes = makeStyles();
     return (
       <div>
         <Container>
@@ -54,9 +43,8 @@ class RecipeBrowser extends React.Component {
           </Box>
           <Grid
             container
-            className={classes.root}
             container
-            spacing={3}
+            spacing={4}
             container
             direction="row"
             justify="space-evenly"
@@ -71,7 +59,7 @@ class RecipeBrowser extends React.Component {
                       to={`/recipe/${recipe.id}`}
                       style={{ textDecoration: "none" }}
                     >
-                      <CardMedia className={classes.media} />{" "}
+                      <CardMedia />{" "}
                       <img
                         src={
                           "https://spoonacular.com/recipeImages/" +
@@ -80,17 +68,7 @@ class RecipeBrowser extends React.Component {
                         }
                       />
                     </Link>
-                    <CardContent>
-                      <Typography
-                        variant="body2"
-                        color="textSecondary"
-                        component="p"
-                      >
-                        This impressive paella is a perfect party dish and a fun
-                        meal to cook together with your guests. Add 1 cup of
-                        frozen peas along with the mussels, if you like.
-                      </Typography>
-                    </CardContent>
+                    <CardContent></CardContent>
                     <CardActions disableSpacing>
                       <IconButton aria-label="add to favorites">
                         <FavoriteIcon />
