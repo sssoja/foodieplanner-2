@@ -23,16 +23,30 @@ class RecipeInstructions extends React.Component {
   }
 
   componentDidMount() {
+    this.fetchRecipes();
+    //this.fetchIngredients();
+  }
+
+  /* fetchIngredients() {
+    fetch(`/recipe/${this.props.match.params.id}/ingredientWidget`)
+    .then((response) => response.json())
+    .then((response) => {
+      this.setState({ ingredients: response });
+  });
+
+} */
+
+  fetchRecipes() {
     fetch(`/recipe/${this.props.match.params.id}`)
       .then((response) => response.json())
       .then((response) => {
         this.setState({ recipe: response });
 
-        let steps = [];
+         let steps = [];
         let arrayOfSteps = this.state.recipe.analyzedInstructions[0].steps;
         let stepNum = this.state.recipe.analyzedInstructions[0].steps[0].number;
 
-        let ingredients = [];
+         let ingredients = [];
         let arrayOfIngredients = this.state.recipe.analyzedInstructions[0]
           .steps[0].ingredients;
 
@@ -43,11 +57,18 @@ class RecipeInstructions extends React.Component {
             ingredients.push(arrayOfIngredients[j].name);
           }
         }
-        this.setState({ analyzedInstructions: steps });
-        this.setState({ ingredients: ingredients });
+        
+        this.setState({ analyzedInstructions: steps }); 
+         this.setState({ ingredients: ingredients });  
         this.setState({ stepNum: stepNum });
+        
+
       });
   }
+
+  
+
+
 
   useStyles = makeStyles({
     root: {
