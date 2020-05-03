@@ -20,6 +20,8 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
+import AddCircleIcon from "@material-ui/icons/AddCircle";
+
 import { Link } from "react-router-dom";
 
 export default class LandingPage extends Component {
@@ -370,11 +372,14 @@ export default class LandingPage extends Component {
                           </Button>
                         </div>
                         <div>
-                          {this.state.ingredients.map((item, index) => (
-                            <div key={index}>
-                              <ul>--> {item}</ul>
-                            </div>
-                          ))}
+                          <br></br>
+                          <Typography variant="h6">
+                            {this.state.ingredients.map((item, index) => (
+                              <div key={index}>
+                                <ul>{item}</ul>
+                              </div>
+                            ))}
+                          </Typography>
                         </div>
                         <br />
                         <div>
