@@ -34,7 +34,6 @@ class RecipeInstructions extends React.Component {
     .then((response) => {
       this.setState({ ingredients: response });
   });
-
 } */
 
   fetchRecipes() {
@@ -44,15 +43,11 @@ class RecipeInstructions extends React.Component {
         this.setState({ recipe: response });
 
         let steps = [];
-
         if (this.state.recipe.analyzedInstructions.length !== 0) {
           let arrayOfSteps = this.state.recipe.analyzedInstructions[0].steps;
           for (let i = 0; i < arrayOfSteps.length; i++) {
             steps.push(arrayOfSteps[i].step);
           }
-          let stepNum = this.state.recipe.analyzedInstructions[0].steps[0]
-            .number;
-          this.setState({ stepNum: stepNum });
         }
 
         let ingredients = [];
@@ -68,58 +63,45 @@ class RecipeInstructions extends React.Component {
       });
   }
 
-  //   componentDidMount() {
-  //     this.fetchIngredientsFromRecipes();
+  // componentDidMount() {
+  //   this.fetchRecipeParams();
   // }
 
-  // async fetchIngredientsFromRecipes() {
-  //     for(let i = 0; i<this.state.recipes.length; i++) {
-  //         let response = await fetch(`recipe/${this.state.recipes[i].id}/ingredientWidget`);
-  //         let json = await response.json();
-  //         this.setState({ ingredients: [...this.state.ingredients, json]});
+  // async fetchRecipeParams() {
+  //   let response = await fetch(`/recipe/${this.props.match.params.id}`);
+  //   let json = await response.json();
+  //   this.setState({ ingredients: response, json });
+
+  //   await this.getInstructions();
+  //   await this.getIngredients();
+  // }
+
+  // getInstructions() {
+  //   let steps = [];
+  //   if (this.state.recipe.analyzedInstructions.length !== 0) {
+  //     let arrayOfSteps = this.state.recipe.analyzedInstructions[0].steps;
+  //     for (let i = 0; i < arrayOfSteps.length; i++) {
+  //       steps.push(arrayOfSteps[i].step);
   //     }
-  //     await this.createIngredientsObject();
-  //    // await this.generateShoppingList();
-  //     await this.removeDuplicates();
-  //     await this.setState({loading: false});
+  //     let stepNum = this.state.recipe.analyzedInstructions[0].steps[0].number;
+  //     this.setState({ stepNum: stepNum });
+  //     this.setState({ analyzedInstructions: steps });
+  //   }
   // }
 
-  // createIngredientsObject() {
-  //     for(let i=0; i<this.state.ingredients.length; i++) {
-  //         let array = this.state.ingredients[i].ingredients
-  //          for(let j=0; j<array.length; j++){
-  //             let ingredientsObject = {...this.state.ingredientsObject};
-  //             ingredientsObject.name = array[j].name;
-  //             ingredientsObject.image = array[j].image;
-  //             ingredientsObject.amount = array[j].amount.metric;
-  //             this.setState({ingredientsObject});
-  //             this.setState({ ingredientsArray: [...this.state.ingredientsArray, this.state.ingredientsObject]});
-  //         }
+  // getIngredients() {
+  //   let ingredients = [];
+  //   let arrayOfIngredients = this.state.recipe.extendedIngredients;
 
-  //     };
+  //   for (let j = 0; j < arrayOfIngredients.length; j++) {
+  //     ingredients.push(arrayOfIngredients[j].name);
+  //   }
+  //   this.setState({ ingredients: ingredients });
   // }
-
-  useStyles = makeStyles({
-    root: {
-      maxWidth: 345,
-    },
-    title: {
-      fontSize: 14,
-    },
-    pos: {
-      marginBottom: 12,
-    },
-    media: {
-      height: 0,
-      paddingTop: "56.25%", // 16:9
-    },
-  });
 
   render() {
-    const classes = makeStyles();
-
     return (
-      <div className={classes.root}>
+      <div>
         <Container>
           <Grid container spacing={3}>
             <Grid item xs={6}>
@@ -141,7 +123,7 @@ class RecipeInstructions extends React.Component {
                             Serves: {this.state.recipe.servings}
                           </Typography>
                           <br></br>
-                          <CardMedia className={classes.media} />{" "}
+                          <CardMedia />{" "}
                           <img
                             src={
                               "https://spoonacular.com/recipeImages/" +
@@ -176,7 +158,7 @@ class RecipeInstructions extends React.Component {
               <br />
               <Paper>
                 <Box p={3}>
-                  <Typography variant="h4">Ingredients</Typography>
+                  <Typography variant="h4">Ingredients &#127798;</Typography>
                   <hr />
                   <div>
                     <div>
