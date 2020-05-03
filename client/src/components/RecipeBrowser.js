@@ -52,7 +52,6 @@ class RecipeBrowser extends React.Component {
           <Box p={3}>
             <Typography variant="h4">Choose your recipe &#128073;</Typography>
           </Box>
-
           <Grid
             container
             className={classes.root}
@@ -66,7 +65,6 @@ class RecipeBrowser extends React.Component {
             {this.state.recipes.map((recipe) => {
               return (
                 <Grid container item xs={12} sm={6} md={3}>
-                  <br></br>
                   <Card>
                     <CardHeader title={recipe.title}></CardHeader>
                     <Link
@@ -102,7 +100,6 @@ class RecipeBrowser extends React.Component {
                       </IconButton>
                     </CardActions>
                   </Card>
-                  <br></br>
                 </Grid>
               );
             })}
