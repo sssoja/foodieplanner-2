@@ -18,24 +18,24 @@ class RecipeInstructions extends React.Component {
     this.state = {
       recipe: {},
       analyzedInstructions: [],
-      stepNum: 0,
       ingredients: [],
+      summary: ""
     };
   }
 
   componentDidMount() {
     this.fetchRecipes();
-    //this.fetchIngredients();
+    this.fetchIngredients();
   }
 
-  /* fetchIngredients() {
+  fetchIngredients() {
     fetch(`/recipe/${this.props.match.params.id}/ingredientWidget`)
     .then((response) => response.json())
     .then((response) => {
-      this.setState({ ingredients: response });
+      this.setState({ ingredients: response.ingredients});
   });
 
-} */
+}
 
   fetchRecipes() {
     fetch(`/recipe/${this.props.match.params.id}`)
@@ -44,26 +44,17 @@ class RecipeInstructions extends React.Component {
         this.setState({ recipe: response });
 
         let steps = [];
-        let arrayOfSteps = this.state.recipe.analyzedInstructions[0].steps;
-        let stepNum = this.state.recipe.analyzedInstructions[0].steps[0].number;
-
-        let ingredients = [];
-        let arrayOfIngredients = this.state.recipe.analyzedInstructions[0] //nested ingredients
-          .steps[0].ingredients;
-
-        for (let i = 0; i < arrayOfSteps.length; i++) {
-          steps.push(arrayOfSteps[i].step);
-
-          for (let j = 0; j < arrayOfIngredients.length; j++) {
-            ingredients.push(arrayOfIngredients[j].name);
+        if(this.state.recipe.analyzedInstructions[0]) {
+          let arrayOfSteps = this.state.recipe.analyzedInstructions[0].steps;
+          for (let i = 0; i < arrayOfSteps.length; i++) {
+            steps.push(arrayOfSteps[i].step);
           }
+          this.setState({ analyzedInstructions: steps });
+        } else {
+          let summary =  this.state.recipe.summary;
+          this.setState({ summary: summary});
         }
-
-        this.setState({ analyzedInstructions: steps });
-
-        this.setState({ ingredients: ingredients });
-
-        this.setState({ stepNum: stepNum });
+        
       });
   }
 
@@ -120,12 +111,14 @@ class RecipeInstructions extends React.Component {
                           <div>
                             <br></br>
                             <Typography>
-                              <div>
-                                {this.state.analyzedInstructions.map(
+                             <div>
+                                {!this.state.analyzedInstructions ? 
+                                this.state.summary
+                                : this.state.analyzedInstructions.map(
                                   (step, index) => (
                                     <div key={index}>
                                       <ol>
-                                        {this.state.stepNum++}. {step}
+                                        {index + 1}. {step}
                                       </ol>
                                     </div>
                                   )
@@ -150,10 +143,10 @@ class RecipeInstructions extends React.Component {
                     <div>
                       <Box p={2}>
                         <div>
-                          <Typography variant="h6">
+                           <Typography variant="subtitle1">
                             {this.state.ingredients.map((ingredient, index) => (
                               <div key={index}>
-                                <ul>&#10004;&nbsp;&nbsp;{ingredient}</ul>
+                                <ul>&#10004;&nbsp;&nbsp;{ingredient.amount.metric.value} {ingredient.amount.metric.unit} <b>{ingredient.name}</b></ul>
                               </div>
                             ))}
                           </Typography>

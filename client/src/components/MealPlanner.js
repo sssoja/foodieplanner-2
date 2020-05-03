@@ -11,10 +11,19 @@ class mealPlanner extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            recipes: this.props.location.state.recipesPlanner.results
-
+            recipes: this.props.location.state.recipesPlanner.results,
+            imgExt: []
         }
     };
+
+    componentDidMount(){
+        let imgExt= []
+        for(let i=0; i<this.state.recipes.length; i++) {
+            let ext = this.state.recipes[i].image.split('.').pop();
+            imgExt.push(ext);         
+        }
+        this.setState({ imgExt: imgExt}); 
+    }
 
     // useStyles = makeStyles({
     //     root: {
@@ -56,7 +65,7 @@ class mealPlanner extends React.Component {
 
                                        {/*  {this.state.recipes[0].title} */}
                                         <Link to={`/recipe/${this.state.recipes[0].id}`}>
-                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[0].id + "-90x90.jpg"} />
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[0].id + "-90x90." + this.state.imgExt[0]} />
                                         </Link>
 
 
@@ -196,7 +205,7 @@ class mealPlanner extends React.Component {
                                 <Grid item xs={1}>
                                     {/* {this.state.recipes[17].title} */}
                                         <Link to={`/recipe/${this.state.recipes[17].id}`}>
-                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[17].id + "-90x90.png"} />
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[17].id + "-90x90." + this.state.imgExt[17]} />
                                         </Link>
                                     
                                 </Grid>
