@@ -82,7 +82,10 @@ class RecipeBrowser extends React.Component {
                       </Typography>
                     </CardContent>
                     <CardActions disableSpacing>
-                      <IconButton aria-label="add to favorites">
+                      <IconButton
+                        aria-label="add to favorites"
+                        color="secondary"
+                      >
                         <FavoriteIcon />
                       </IconButton>
                       <IconButton aria-label="share">

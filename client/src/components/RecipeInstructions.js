@@ -136,7 +136,7 @@ class RecipeInstructions extends React.Component {
               <br />
               <Paper>
                 <Box p={3}>
-                  <Typography variant="h4">Ingredients </Typography>
+                  <Typography variant="h4">Ingredients &#128071;</Typography>
                   <hr />
                   <div>
                     <div>
