@@ -44,28 +44,60 @@ class RecipeInstructions extends React.Component {
         this.setState({ recipe: response });
 
         let steps = [];
-        let arrayOfSteps = this.state.recipe.analyzedInstructions[0].steps;
-        let stepNum = this.state.recipe.analyzedInstructions[0].steps[0].number;
+
+        if (this.state.recipe.analyzedInstructions.length !== 0) {
+          let arrayOfSteps = this.state.recipe.analyzedInstructions[0].steps;
+          for (let i = 0; i < arrayOfSteps.length; i++) {
+            steps.push(arrayOfSteps[i].step);
+          }
+          let stepNum = this.state.recipe.analyzedInstructions[0].steps[0]
+            .number;
+          this.setState({ stepNum: stepNum });
+        }
 
         let ingredients = [];
-        let arrayOfIngredients = this.state.recipe.analyzedInstructions[0] //nested ingredients
-          .steps[0].ingredients;
+        let arrayOfIngredients = this.state.recipe.extendedIngredients;
 
-        for (let i = 0; i < arrayOfSteps.length; i++) {
-          steps.push(arrayOfSteps[i].step);
-
-          for (let j = 0; j < arrayOfIngredients.length; j++) {
-            ingredients.push(arrayOfIngredients[j].name);
-          }
+        for (let j = 0; j < arrayOfIngredients.length; j++) {
+          ingredients.push(arrayOfIngredients[j].name);
         }
 
         this.setState({ analyzedInstructions: steps });
 
         this.setState({ ingredients: ingredients });
-
-        this.setState({ stepNum: stepNum });
       });
   }
+
+  //   componentDidMount() {
+  //     this.fetchIngredientsFromRecipes();
+  // }
+
+  // async fetchIngredientsFromRecipes() {
+  //     for(let i = 0; i<this.state.recipes.length; i++) {
+  //         let response = await fetch(`recipe/${this.state.recipes[i].id}/ingredientWidget`);
+  //         let json = await response.json();
+  //         this.setState({ ingredients: [...this.state.ingredients, json]});
+  //     }
+  //     await this.createIngredientsObject();
+  //    // await this.generateShoppingList();
+  //     await this.removeDuplicates();
+  //     await this.setState({loading: false});
+  // }
+
+  // createIngredientsObject() {
+  //     for(let i=0; i<this.state.ingredients.length; i++) {
+  //         let array = this.state.ingredients[i].ingredients
+  //          for(let j=0; j<array.length; j++){
+  //             let ingredientsObject = {...this.state.ingredientsObject};
+  //             ingredientsObject.name = array[j].name;
+  //             ingredientsObject.image = array[j].image;
+  //             ingredientsObject.amount = array[j].amount.metric;
+  //             this.setState({ingredientsObject});
+  //             this.setState({ ingredientsArray: [...this.state.ingredientsArray, this.state.ingredientsObject]});
+  //         }
+
+  //     };
+  // }
 
   useStyles = makeStyles({
     root: {
@@ -153,7 +185,10 @@ class RecipeInstructions extends React.Component {
                           <Typography variant="h6">
                             {this.state.ingredients.map((ingredient, index) => (
                               <div key={index}>
-                                <ul>&#10004;&nbsp;&nbsp;{ingredient}</ul>
+                                <ul>
+                                  <AssignmentTurnedInIcon></AssignmentTurnedInIcon>
+                                  &nbsp;&nbsp;{ingredient}
+                                </ul>
                               </div>
                             ))}
                           </Typography>
