@@ -83,7 +83,7 @@ class RecipeBrowser extends React.Component {
                         src={
                           "https://spoonacular.com/recipeImages/" +
                           recipe.id +
-                          "-480x360.jpg"
+                          "-480x360." + recipe.imageType
                         }
                       />
                     </Link>

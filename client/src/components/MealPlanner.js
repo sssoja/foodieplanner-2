@@ -50,7 +50,9 @@ class mealPlanner extends React.Component {
                 <Box p={5}>
                 <div> 
                     <br/>
-                    <Typography variant="h4">Meal Planner</Typography>
+                    <Typography style={{ color: "rgb(33, 48, 55)" }}
+                        variant="h3"
+                        textAlign="center">Meal Planner</Typography>
                     <br/>
                     <Grid container spacing={5}
                     
@@ -59,58 +61,114 @@ class mealPlanner extends React.Component {
                         justify="space-evenly"
                         alignItems="center"
                     >
+                        <Grid container item xs={12} spacing={3}> {/* this is a row */}
+                            <React.Fragment>
+                                <Grid item xs={1}>
+                                    <Paper></Paper>
+                                </Grid>
+                                <Grid item xs={1}>
+                                    <Paper variant="contained"
+                                        style={{
+                                            backgroundColor: "rgb(248, 183, 53)",
+                                            color: "black",
+                                            textAlign: "center"
+                                        }}>MONDAY</Paper>
+                                </Grid>
+                                <Grid item xs={1}>
+                                    <Paper variant="contained"
+                                        style={{
+                                            backgroundColor: "rgb(248, 183, 53)",
+                                            color: "black",
+                                            textAlign: "center"
+                                        }}>TUESDAY</Paper>
+                                </Grid>
+                                <Grid item xs={1}>
+                                    <Paper variant="contained"
+                                        style={{
+                                            backgroundColor: "rgb(248, 183, 53)",
+                                            color: "black",
+                                            textAlign: "center"
+                                        }}> WEDNESDAY</Paper>
+                                </Grid>
+                                <Grid item xs={1}>
+                                    <Paper variant="contained"
+                                        style={{
+                                            backgroundColor: "rgb(248, 183, 53)",
+                                            color: "black",
+                                            textAlign: "center"
+                                        }}>THURSDAY</Paper>
+                                </Grid>
+                                <Grid item xs={1}>
+                                    <Paper variant="contained"
+                                        style={{
+                                            backgroundColor: "rgb(248, 183, 53)",
+                                            color: "black",
+                                            textAlign: "center"
+                                        }}>FRIDAY</Paper>
+                                </Grid>
+                                <Grid item xs={1}>
+                                    <Paper variant="contained"
+                                        style={{
+                                            backgroundColor: "rgb(248, 183, 53)",
+                                            color: "black",
+                                            textAlign: "center"
+                                        }}>SATURDAY</Paper>
+                                </Grid>
+                                <Grid item xs={1}>
+                                    <Paper variant="contained"
+                                        style={{
+                                            backgroundColor: "rgb(248, 183, 53)",
+                                            color: "black",
+                                            textAlign: "center"
+                                        }}>SUNDAY</Paper>
+                                </Grid>
+                            </React.Fragment>
+                        </Grid>
                         <Grid container item xs={12} spacing={6}> {/* this is a row */}
                             <React.Fragment>
                                 <Grid item xs={1}>
-
-                                       {/*  {this.state.recipes[0].title} */}
+                                    <Paper variant="contained"
+                                        style={{
+                                            backgroundColor: "rgb(248, 183, 53)",
+                                            color: "black",
+                                            textAlign: "center"
+                                        }}>BREAKFAST</Paper>
+                                </Grid>
+                                <Grid item xs={1}>
                                         <Link to={`/recipe/${this.state.recipes[0].id}`}>
                                             <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[0].id + "-90x90." + this.state.imgExt[0]} />
                                         </Link>
-
-
                                 </Grid>
                                 <Grid item xs={1}>
-                                   {/* {this.state.recipes[1].title} */}
                                         <Link to={`/recipe/${this.state.recipes[1].id}`}>
-                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[1].id + "-90x90.jpg"} />
-                                        </Link>
-  
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[1].id + "-90x90." + this.state.imgExt[1]} />
+                                        </Link> 
                                 </Grid>
                                 <Grid item xs={1}>
-    {/* {this.state.recipes[2].title} */}
                                         <Link to={`/recipe/${this.state.recipes[2].id}`}>
-                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[2].id + "-90x90.jpg"} />
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[2].id + "-90x90." + this.state.imgExt[2]} />
                                         </Link>
-
                                 </Grid>
                                 <Grid item xs={1}>
-                                 {/* {this.state.recipes[3].title} */}
                                         <Link to={`/recipe/${this.state.recipes[3].id}`}>
-                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[3].id + "-90x90.jpg"} />
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[3].id + "-90x90." + this.state.imgExt[3]} />
                                         </Link>
                              
                                 </Grid>
                                 <Grid item xs={1}>
-                              {/* {this.state.recipes[4].title} */}
                                         <Link to={`/recipe/${this.state.recipes[4].id}`}>
-                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[4].id + "-90x90.jpg"} />
-                                        </Link>
-                              
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[4].id + "-90x90." + this.state.imgExt[4]} />
+                                        </Link>                          
                                 </Grid>
                                 <Grid item xs={1}>
-                                    {/* {this.state.recipes[5].title} */}
                                         <Link to={`/recipe/${this.state.recipes[5].id}`}>
-                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[5].id + "-90x90.jpg"} />
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[5].id + "-90x90." + this.state.imgExt[5]} />
                                         </Link>
-                             
                                 </Grid>
                                 <Grid item xs={1}>
-                                 {/* {this.state.recipes[6].title} */}
                                         <Link to={`/recipe/${this.state.recipes[6].id}`}>
-                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[6].id + "-90x90.jpg"} />
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[6].id + "-90x90." + this.state.imgExt[6]} />
                                         </Link>
-                                   
                                 </Grid>
                             </React.Fragment>
                         </Grid>
@@ -123,53 +181,47 @@ class mealPlanner extends React.Component {
                         <Grid container item xs={12} spacing={6}> {/* this is a row */}
                             <React.Fragment>
                                 <Grid item xs={1}>
-                                {/* {this.state.recipes[7].title} */}
+                                    <Paper variant="contained"
+                                        style={{
+                                            backgroundColor: "rgb(248, 183, 53)",
+                                            color: "black",
+                                            textAlign: "center"
+                                        }}>LUNCH</Paper>
+                                </Grid>
+                                <Grid item xs={1}>
                                         <Link to={`/recipe/${this.state.recipes[7].id}`}>
-                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[7].id + "-90x90.jpg"} />
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[7].id + "-90x90." + this.state.imgExt[7]} />
                                         </Link>
-                                  
                                 </Grid>
                                 <Grid item xs={1}>
-                               {/* {this.state.recipes[8].title} */}
                                         <Link to={`/recipe/${this.state.recipes[8].id}`}>
-                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[8].id + "-90x90.jpg"} />
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[8].id + "-90x90." + this.state.imgExt[8]} />
                                         </Link>
-                                 
                                 </Grid>
                                 <Grid item xs={1}>
-                              {/* {this.state.recipes[9].title} */}
                                         <Link to={`/recipe/${this.state.recipes[9].id}`}>
-                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[9].id + "-90x90.jpeg"} />
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[9].id + "-90x90." + this.state.imgExt[9]} />
                                         </Link>
-                                 
                                 </Grid>
                                 <Grid item xs={1}>
-                                  {/* {this.state.recipes[10].title} */}
                                         <Link to={`/recipe/${this.state.recipes[10].id}`}>
-                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[10].id + "-90x90.jpg"} />
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[10].id + "-90x90." + this.state.imgExt[10]} />
                                         </Link>
-                                 
                                 </Grid>
                                 <Grid item xs={1}>
-                                {/* {this.state.recipes[11].title} */}
                                         <Link to={`/recipe/${this.state.recipes[11].id}`}>
-                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[11].id + "-90x90.jpg"} />
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[11].id + "-90x90." + this.state.imgExt[11]} />
                                         </Link>
-                                    
                                 </Grid>
                                 <Grid item xs={1}>
-                                  {/* {this.state.recipes[12].title} */}
                                         <Link to={`/recipe/${this.state.recipes[12].id}`}>
-                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[12].id + "-90x90.jpg"} />
+                                        <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[12].id + "-90x90." + this.state.imgExt[12]} />
                                         </Link>
-                                 
                                 </Grid>
                                 <Grid item xs={1}>
-                                  {/* {this.state.recipes[13].title} */}
                                         <Link to={`/recipe/${this.state.recipes[13].id}`}>
-                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[13].id + "-90x90.jpg"} />
+                                        <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[13].id + "-90x90." + this.state.imgExt[13]} />
                                         </Link>
-                                  
                                 </Grid>
                             </React.Fragment>
                         </Grid>
@@ -182,53 +234,47 @@ class mealPlanner extends React.Component {
                         <Grid container item xs={12} spacing={6}> {/* this is a row */}
                             <React.Fragment>
                                 <Grid item xs={1}>
-                                    {/* {this.state.recipes[14].title} */}
+                                    <Paper variant="contained"
+                                        style={{
+                                            backgroundColor: "rgb(248, 183, 53)",
+                                            color: "black",
+                                            textAlign: "center"
+                                        }}>DINNER</Paper>
+                                </Grid>
+                                <Grid item xs={1}>
                                         <Link to={`/recipe/${this.state.recipes[14].id}`}>
-                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[14].id + "-90x90.jpg"} />
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[14].id + "-90x90." + this.state.imgExt[14]} />
                                         </Link>
-                                    
                                 </Grid>
                                 <Grid item xs={1}>
-                                    {/* {this.state.recipes[15].title} */}
                                         <Link to={`/recipe/${this.state.recipes[15].id}`}>
-                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[15].id + "-90x90.jpg"} />
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[15].id + "-90x90." + this.state.imgExt[15]} />
                                         </Link>
-                                   
                                 </Grid>
                                 <Grid item xs={1}>
-                                   {/* {this.state.recipes[16].title} */}
                                         <Link to={`/recipe/${this.state.recipes[16].id}`}>
-                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[16].id + "-90x90.jpeg"} />
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[16].id + "-90x90." + this.state.imgExt[16]} />
                                         </Link>
-                                 
                                 </Grid>
                                 <Grid item xs={1}>
-                                    {/* {this.state.recipes[17].title} */}
                                         <Link to={`/recipe/${this.state.recipes[17].id}`}>
                                             <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[17].id + "-90x90." + this.state.imgExt[17]} />
                                         </Link>
-                                    
                                 </Grid>
                                 <Grid item xs={1}>
-                                    {/* {this.state.recipes[18].title} */}
                                         <Link to={`/recipe/${this.state.recipes[18].id}`}>
-                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[18].id + "-90x90.jpg"} />
+                                        <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[18].id + "-90x90." + this.state.imgExt[18]} />
                                         </Link>
-                                  
                                 </Grid>
                                 <Grid item xs={1}>
-                                  {/* {this.state.recipes[19].title} */}
                                         <Link to={`/recipe/${this.state.recipes[19].id}`}>
-                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[19].id + "-90x90.jpg"} />
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[19].id + "-90x90." + this.state.imgExt[19]} />
                                         </Link>
-                                   
                                 </Grid>
                                 <Grid item xs={1}>
-                                  {/* {this.state.recipes[20].title} */}
                                         <Link to={`/recipe/${this.state.recipes[20].id}`}>
-                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[20].id + "-90x90.jpg"} />
+                                            <img src={"https://spoonacular.com/recipeImages/" + this.state.recipes[20].id + "-90x90." + this.state.imgExt[20]}/>
                                         </Link>
-                                    
                                 </Grid>
                             </React.Fragment>
                         </Grid>
@@ -236,7 +282,7 @@ class mealPlanner extends React.Component {
                 </div>
                 <br/>
                 <br/>
-                <div style={{ textAlign: "center" }}>
+                <div>
                     <Link
                         to={{
                             pathname: "/shopping-list",
