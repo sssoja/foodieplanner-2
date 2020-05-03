@@ -92,7 +92,8 @@ class RecipeInstructions extends React.Component {
                       <Card>
                         <CardContent>
                           <Typography variant="h6">
-                            Ready in minutes: {this.state.recipe.readyInMinutes}
+                            Ready in minutes:{" "}
+                            <b>{this.state.recipe.readyInMinutes}</b>
                           </Typography>
                           <Typography variant="h6">
                             Serves: {this.state.recipe.servings}
@@ -135,7 +136,7 @@ class RecipeInstructions extends React.Component {
               <br />
               <Paper>
                 <Box p={3}>
-                  <Typography variant="h4">Ingredients</Typography>
+                  <Typography variant="h4">Ingredients </Typography>
                   <hr />
                   <div>
                     <div>

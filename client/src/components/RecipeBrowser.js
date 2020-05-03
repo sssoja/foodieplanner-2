@@ -3,7 +3,6 @@ import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
-import { makeStyles } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
@@ -13,7 +12,6 @@ import { BrowserRouter as Router, Link } from "react-router-dom";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import IconButton from "@material-ui/core/IconButton";
 import ShareIcon from "@material-ui/icons/Share";
-import Button from "@material-ui/core/Button";
 
 class RecipeBrowser extends React.Component {
   constructor(props) {
@@ -38,13 +36,16 @@ class RecipeBrowser extends React.Component {
     return (
       <div>
         <Container>
-          <Box p={3}>
-            <Typography variant="h4">Choose your recipe &#128073;</Typography>
+          <Box p={1}>
+            <div>
+              <br></br>
+              <Typography variant="h4">Choose your recipe &#128073;</Typography>
+            </div>
           </Box>
           <Grid
             container
             container
-            spacing={4}
+            spacing={3}
             container
             direction="row"
             justify="space-evenly"
@@ -53,6 +54,7 @@ class RecipeBrowser extends React.Component {
             {this.state.recipes.map((recipe) => {
               return (
                 <Grid container item xs={12} sm={6} md={3}>
+                  <br></br>
                   <Card>
                     <CardHeader title={recipe.title}></CardHeader>
                     <Link
@@ -68,7 +70,17 @@ class RecipeBrowser extends React.Component {
                         }
                       />
                     </Link>
-                    <CardContent></CardContent>
+                    <CardContent>
+                      <Typography
+                        variant="body2"
+                        color="textSecondary"
+                        component="p"
+                      >
+                        This impressive paella is a perfect party dish and a fun
+                        meal to cook together with your guests. Add 1 cup of
+                        frozen peas along with the mussels, if you like.
+                      </Typography>
+                    </CardContent>
                     <CardActions disableSpacing>
                       <IconButton aria-label="add to favorites">
                         <FavoriteIcon />
@@ -78,6 +90,7 @@ class RecipeBrowser extends React.Component {
                       </IconButton>
                     </CardActions>
                   </Card>
+                  <br></br>
                 </Grid>
               );
             })}
