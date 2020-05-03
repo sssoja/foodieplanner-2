@@ -24,6 +24,20 @@ class RecipeInstructions extends React.Component {
   }
 
   componentDidMount() {
+    this.fetchRecipes();
+    //this.fetchIngredients();
+  }
+
+  /* fetchIngredients() {
+    fetch(`/recipe/${this.props.match.params.id}/ingredientWidget`)
+    .then((response) => response.json())
+    .then((response) => {
+      this.setState({ ingredients: response });
+  });
+
+} */
+
+  fetchRecipes() {
     fetch(`/recipe/${this.props.match.params.id}`)
       .then((response) => response.json())
       .then((response) => {
