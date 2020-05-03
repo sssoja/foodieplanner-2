@@ -110,7 +110,7 @@ export default class ShoppingList extends Component {
 
     render() {
         return (
-            <div style={{ textAlign: "center"}}>
+            <div>
                 <Box p={5}>
                     {this.state.loading ? <CircularProgress style={{ color: "rgb(248, 183, 53)", }}/> :
                     <div>
@@ -124,6 +124,7 @@ export default class ShoppingList extends Component {
                                     <h4>{ingredient.name}</h4>
                                     <img src={"https://spoonacular.com/cdn/ingredients_100x100/" + ingredient.image} />
                                     <p>{ingredient.amount.value} {ingredient.amount.unit}</p>
+                                    <br/>
                             </div>
                             );
                             })}
