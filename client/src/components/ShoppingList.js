@@ -100,26 +100,28 @@ export default class ShoppingList extends Component {
 
     render() {
         return (
-            <div>
-                <div>
-                {this.state.loading ? <CircularProgress /> : "Page Loaded"}
-                </div>
-                <Box p={3}>
-                    <Typography variant="h4">Shopping List</Typography>
-                </Box>
-                <Box p={3}>
-                    {this.state.updatedIngredientsArray.map((ingredient, index) => {
-                      return (
-                      <div key={index}>
-                            <h4>{ingredient.name}</h4>
-                            <img src={"https://spoonacular.com/cdn/ingredients_100x100/" + ingredient.image} />
-                            <p>{ingredient.amount.value} {ingredient.amount.unit}</p>
-                      </div>
-                      );
-                    })}
+            <div style={{ textAlign: "center"}}>
+                <Box p={5}>
+                    {this.state.loading ? <CircularProgress style={{ color: "rgb(248, 183, 53)", }}/> :
+                    <div>
+                        <Box p={3}>
+                            <Typography variant="h4">Shopping List</Typography>
+                        </Box>
+                        <Box p={3}>
+                            {this.state.updatedIngredientsArray.map((ingredient, index) => {
+                            return (
+                            <div key={index}>
+                                    <h4>{ingredient.name}</h4>
+                                    <img src={"https://spoonacular.com/cdn/ingredients_100x100/" + ingredient.image} />
+                                    <p>{ingredient.amount.value} {ingredient.amount.unit}</p>
+                            </div>
+                            );
+                            })}
+                        </Box>
+                    </div>
+                    }
                 </Box>
             </div>
         )
     }
 }
-
