@@ -54,7 +54,7 @@ class RecipeBrowser extends React.Component {
       paddingTop: "56.25%", // 16:9
     },
     root: {
-      flexGrow: 1,
+      flexGrow: 1
     },
   });
 
@@ -73,7 +73,7 @@ class RecipeBrowser extends React.Component {
                 <Grid xs={12} sm={6} md={3}>
                   <br></br>
                   <Card>
-                    <CardHeader title={recipe.title}></CardHeader>
+                  <CardHeader title={recipe.title} />
                     <Link
                       to={`/recipe/${recipe.id}`}
                       style={{ textDecoration: "none" }}
