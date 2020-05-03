@@ -10,6 +10,7 @@ import Box from "@material-ui/core/Box";
 // import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
+import AssignmentTurnedInIcon from "@material-ui/icons/AssignmentTurnedIn";
 
 class RecipeInstructions extends React.Component {
   constructor(props) {
@@ -33,7 +34,7 @@ class RecipeInstructions extends React.Component {
         let stepNum = this.state.recipe.analyzedInstructions[0].steps[0].number;
 
         let ingredients = [];
-        let arrayOfIngredients = this.state.recipe.analyzedInstructions[0]
+        let arrayOfIngredients = this.state.recipe.analyzedInstructions[0] //nested ingredients
           .steps[0].ingredients;
 
         for (let i = 0; i < arrayOfSteps.length; i++) {
@@ -43,8 +44,11 @@ class RecipeInstructions extends React.Component {
             ingredients.push(arrayOfIngredients[j].name);
           }
         }
+
         this.setState({ analyzedInstructions: steps });
+
         this.setState({ ingredients: ingredients });
+
         this.setState({ stepNum: stepNum });
       });
   }
