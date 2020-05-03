@@ -13,8 +13,6 @@ import { BrowserRouter as Router, Link } from "react-router-dom";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import IconButton from "@material-ui/core/IconButton";
 import ShareIcon from "@material-ui/icons/Share";
-import GridListTile from "@material-ui/core/GridListTile";
-import GridList from "@material-ui/core/GridList";
 
 class RecipeBrowser extends React.Component {
   constructor(props) {
@@ -22,7 +20,6 @@ class RecipeBrowser extends React.Component {
     this.state = {
       ingredients: this.props.location.state,
       recipes: [],
-
       snippet: "",
     };
   }
@@ -56,10 +53,19 @@ class RecipeBrowser extends React.Component {
             <Typography variant="h4">Choose your recipe &#128073;</Typography>
           </Box>
 
-          <Grid container className={classes.root}>
+          <Grid
+            container
+            className={classes.root}
+            container
+            spacing={3}
+            container
+            direction="row"
+            justify="space-evenly"
+            alignItems="center"
+          >
             {this.state.recipes.map((recipe) => {
               return (
-                <Grid xs={12} sm={6} md={3}>
+                <Grid container item xs={12} sm={6} md={3}>
                   <br></br>
                   <Card>
                     <CardHeader title={recipe.title}></CardHeader>
