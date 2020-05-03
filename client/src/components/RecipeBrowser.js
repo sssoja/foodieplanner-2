@@ -28,14 +28,25 @@ class RecipeBrowser extends React.Component {
   }
 
   componentDidMount() {
-    let ingredients = this.state.ingredients.ingredientsForRecipes.toString();
-
-    fetch(`/recipe/findByIngredients/${ingredients}`)
-      .then((response) => response.json())
-      .then((response) => {
-        this.setState({ recipes: response });
-      });
+    this.fetchRecipes();
   }
+
+  fetchRecipes() {
+    let ingredients = this.state.ingredients.ingredientsForRecipes.toString();
+    fetch(`/recipe/findByIngredients/${ingredients}`)
+    .then((response) => response.json())
+    .then((response) => {
+      this.setState({ recipes: response });
+    });
+  }
+/* 
+  async fetchRecipes() {
+    let ingredients = await this.state.ingredients.ingredientsForRecipes.toString();
+    let response = await fetch(`/recipe/findByIngredients/${ingredients}`);
+        let json = await response.json();
+        this.setState({ recipes: json}); 
+  } */
+
 
   useStyles = makeStyles({
     media: {
