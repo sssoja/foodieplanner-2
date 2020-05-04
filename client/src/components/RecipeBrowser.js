@@ -73,7 +73,7 @@ class RecipeBrowser extends React.Component {
                     <CardContent>
                       <Typography
                         variant="body2"
-                        color="textSecondary"
+                        color="subtitle"
                         component="p"
                       >
                         This impressive paella is a perfect party dish and a fun
