@@ -20,7 +20,7 @@ cd `client` and run yarn install dependencies related to React.
   &nbsp;
   &nbsp;
 
-#### Full Stack Framework - 1
+### Full Stack Framework
 
 ![Full stack design](/design/fs-architecture.png)
 
@@ -29,20 +29,20 @@ Recreated from and inspired by, Al Madireddy's article:
 &nbsp;
 &nbsp;
 
-#### Product Userflows -2
+### Product Userflows
 
 ![Userflow mapping](/design/user-flow.png)
 &nbsp;
 &nbsp;
 
-#### Route File Structuring -3
+### Route File Structuring
 
 &nbsp;
 ![API route files structure](/design/url-routing.png)
 &nbsp;
 &nbsp;
 
-#### Mock-up - 4
+### Mock-up
 
 &nbsp;
 ![Mock up](/design/landingpage.png)
