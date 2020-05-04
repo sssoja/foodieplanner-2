@@ -18,19 +18,23 @@ cd `client` and run yarn install dependencies related to React.
 - You can test your client app in `http://localhost:3000`
 - You can test your API in `http://localhost:5000`
   &nbsp;
-
+  &nbsp;
   #### Mock-up
-![Mock up](/design/landingpage.png)
   &nbsp;
-![Mock up](design/mealplanner.png)
-&nbsp;
-![Mock up](/design/shoppingList.png)
+  ![Mock up](/design/landingpage.png)
   &nbsp;
-
-![Mock up](/design/recipePage.png)
   &nbsp;
-
-![Mock up](/design/ingredients.png)
+  ![Mock up](design/mealplanner.png)
+  &nbsp;
+  &nbsp;
+  ![Mock up](/design/shoppingList.png)
+  &nbsp;
+  &nbsp;
+  ![Mock up](/design/recipePage.png)
+  &nbsp;
+  &nbsp;
+  ![Mock up](/design/ingredients.png)
+  &nbsp;
   &nbsp;
 
 #### Product Userflows
@@ -40,7 +44,9 @@ cd `client` and run yarn install dependencies related to React.
 
 #### Route File Structuring
 
+&nbsp;
 ![API route files structure](/design/url-routing.png)
+&nbsp;
 &nbsp;
 
 #### Full Stack Framework
@@ -52,6 +58,7 @@ Recreated from and inspired by, Al Madireddy's article:
 
 ### Future features
 
--
+- Export functionality to popular messenging apps such as Whatsapp, Facebook Messenger and Telegram.
+- User login and favourite lists
 
 _This is a student project that was created at [CodeOp](http://codeop.tech), a full stack development bootcamp in Barcelona._

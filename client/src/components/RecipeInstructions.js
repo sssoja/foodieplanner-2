@@ -19,7 +19,7 @@ class RecipeInstructions extends React.Component {
       recipe: {},
       analyzedInstructions: [],
       ingredients: [],
-      summary: ""
+      summary: "",
     };
   }
 
@@ -30,12 +30,11 @@ class RecipeInstructions extends React.Component {
 
   fetchIngredients() {
     fetch(`/recipe/${this.props.match.params.id}/ingredientWidget`)
-    .then((response) => response.json())
-    .then((response) => {
-      this.setState({ ingredients: response.ingredients});
-  });
-
-}
+      .then((response) => response.json())
+      .then((response) => {
+        this.setState({ ingredients: response.ingredients });
+      });
+  }
 
   fetchRecipes() {
     fetch(`/recipe/${this.props.match.params.id}`)
@@ -44,17 +43,16 @@ class RecipeInstructions extends React.Component {
         this.setState({ recipe: response });
 
         let steps = [];
-        if(this.state.recipe.analyzedInstructions[0]) {
+        if (this.state.recipe.analyzedInstructions[0]) {
           let arrayOfSteps = this.state.recipe.analyzedInstructions[0].steps;
           for (let i = 0; i < arrayOfSteps.length; i++) {
             steps.push(arrayOfSteps[i].step);
           }
           this.setState({ analyzedInstructions: steps });
         } else {
-          let summary =  this.state.recipe.summary;
-          this.setState({ summary: summary});
+          let summary = this.state.recipe.summary;
+          this.setState({ summary: summary });
         }
-        
       });
   }
 
@@ -94,7 +92,8 @@ class RecipeInstructions extends React.Component {
                       <Card>
                         <CardContent>
                           <Typography variant="h6">
-                            Ready in minutes: {this.state.recipe.readyInMinutes}
+                            Ready in minutes:{" "}
+                            <b>{this.state.recipe.readyInMinutes}</b>
                           </Typography>
                           <Typography variant="h6">
                             Serves: {this.state.recipe.servings}
@@ -111,18 +110,18 @@ class RecipeInstructions extends React.Component {
                           <div>
                             <br></br>
                             <Typography>
-                             <div>
-                                {!this.state.analyzedInstructions ? 
-                                this.state.summary
-                                : this.state.analyzedInstructions.map(
-                                  (step, index) => (
-                                    <div key={index}>
-                                      <ol>
-                                        {index + 1}. {step}
-                                      </ol>
-                                    </div>
-                                  )
-                                )}
+                              <div>
+                                {!this.state.analyzedInstructions
+                                  ? this.state.summary
+                                  : this.state.analyzedInstructions.map(
+                                      (step, index) => (
+                                        <div key={index}>
+                                          <ol>
+                                            {index + 1}. {step}
+                                          </ol>
+                                        </div>
+                                      )
+                                    )}
                               </div>
                             </Typography>
                           </div>
@@ -137,16 +136,21 @@ class RecipeInstructions extends React.Component {
               <br />
               <Paper>
                 <Box p={3}>
-                  <Typography variant="h4">Ingredients</Typography>
+                  <Typography variant="h4">Ingredients &#128071;</Typography>
                   <hr />
                   <div>
                     <div>
                       <Box p={2}>
                         <div>
-                           <Typography variant="subtitle1">
+                          <Typography variant="subtitle1">
                             {this.state.ingredients.map((ingredient, index) => (
                               <div key={index}>
-                                <ul>&#10004;&nbsp;&nbsp;{ingredient.amount.metric.value} {ingredient.amount.metric.unit} <b>{ingredient.name}</b></ul>
+                                <ul>
+                                  &#10004;&nbsp;&nbsp;
+                                  {ingredient.amount.metric.value}{" "}
+                                  {ingredient.amount.metric.unit}{" "}
+                                  <b>{ingredient.name}</b>
+                                </ul>
                               </div>
                             ))}
                           </Typography>

@@ -2,8 +2,8 @@ import React from "react";
 import "./App.css";
 import "typeface-roboto";
 import LandingPage from "./components/LandingPage";
-import MealPlanner from './components/MealPlanner';
-import ShoppingList from './components/ShoppingList';
+import MealPlanner from "./components/MealPlanner";
+import ShoppingList from "./components/ShoppingList";
 import RecipeInstructions from "./components/RecipeInstructions";
 import RecipeBrowser from "./components/RecipeBrowser";
 import AppBar from "@material-ui/core/AppBar";
@@ -21,6 +21,8 @@ export default function App() {
             style={{ backgroundColor: "rgb(43, 137, 139)" }}
             variant="dense"
           >
+            {" "}
+            <img src="/foodieplanner.jpg" alt="Logo" height={100} />
             <Link to="/" style={{ textDecoration: "none" }}>
               <Typography style={{ color: "white" }} variant="h2">
                 <Box letterSpacing={4} m={2}>
