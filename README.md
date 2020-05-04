@@ -19,46 +19,50 @@ cd `client` and run yarn install dependencies related to React.
 - You can test your API in `http://localhost:5000`
   &nbsp;
   &nbsp;
-  #### Mock-up
-  &nbsp;
-  ![Mock up](/design/landingpage.png)
-  &nbsp;
-  &nbsp;
-  ![Mock up](design/mealplanner.png)
-  &nbsp;
-  &nbsp;
-  ![Mock up](/design/shoppingList.png)
-  &nbsp;
-  &nbsp;
-  ![Mock up](/design/recipePage.png)
-  &nbsp;
-  &nbsp;
-  ![Mock up](/design/ingredients.png)
-  &nbsp;
-  &nbsp;
 
-#### Product Userflows
+### Full Stack Framework
+
+![Full stack design](/design/fs-architecture.png)
+
+Recreated from and inspired by, Al Madireddy's article:
+[Designing A Web App Architecture](https://dev.to/almadireddy/full-stack-101-2-designing-our-web-app-architecture-l6a)
+&nbsp;
+&nbsp;
+
+### Product Userflows
 
 ![Userflow mapping](/design/user-flow.png)
 &nbsp;
+&nbsp;
 
-#### Route File Structuring
+### Route File Structuring
 
 &nbsp;
 ![API route files structure](/design/url-routing.png)
 &nbsp;
 &nbsp;
 
-#### Full Stack Framework
+### Mock-up
 
-![Full stack design](/design/fs-architecture.png)
-
-Recreated from and inspired by, Al Madireddy's article:
-[Designing A Web App Architecture](https://dev.to/almadireddy/full-stack-101-2-designing-our-web-app-architecture-l6a)
+&nbsp;
+![Mock up](/design/landingpage.png)
+&nbsp;
+&nbsp;
+![Mock up](design/mealplanner.png)
+&nbsp;
+&nbsp;
+![Mock up](/design/shoppingList.png)
+&nbsp;
+&nbsp;
+![Mock up](/design/recipePage.png)
+&nbsp;
+&nbsp;
+![Mock up](/design/ingredients.png)
 
 ### Future features
 
+- Save to PDF / download functionality
 - Export functionality to popular messenging apps such as Whatsapp, Facebook Messenger and Telegram.
-- User login and favourite lists
+- User login, saved recipes and favourite lists
 
 _This is a student project that was created at [CodeOp](http://codeop.tech), a full stack development bootcamp in Barcelona._
