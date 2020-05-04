@@ -62,7 +62,7 @@ Recreated from and inspired by, Al Madireddy's article:
 ### Future features
 
 - Save to PDF / download functionality
-- Export functionality to popular messenging apps such as Whatsapp, Facebook Messenger and Telegram.
+- Export functionality to popular messaging apps such as Whatsapp, Facebook Messenger and Telegram.
 - User login, saved recipes and favourite lists
 
 _This is a student project that was created at [CodeOp](http://codeop.tech), a full stack development bootcamp in Barcelona._
